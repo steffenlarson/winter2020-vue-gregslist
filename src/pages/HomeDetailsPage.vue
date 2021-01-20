@@ -1,6 +1,7 @@
 <template>
   <div class="home-details">
     <h1>Welcome to home details</h1>
+    <!-- NOTE v-if used here  -->
     <img v-if="state.loaded" :src="home.imgUrl" alt="" />
     <h1 v-else>
       Loading...

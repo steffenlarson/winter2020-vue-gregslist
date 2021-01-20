@@ -1,6 +1,8 @@
 <template>
   <nav class="navbar navbar-expand navbar-light bg-light">
     <div class="nav navbar-nav">
+      <!-- NOTE router links are like tags on a page. One for each page to travel to. -->
+      <!-- REVIEW why the :to? is that the path we want the link to take? The name is what the path is called in the index. -->
       <router-link :to="{ name: 'Cars' }" class="nav-item nav-link active">
         Cars
       </router-link>
@@ -21,6 +23,7 @@
 </template>
 
 <style lang="scss">
+// NOTE import bootstrap here so that it can be used for the whole application.
 @import 'bootstrap';
 
 #app {
