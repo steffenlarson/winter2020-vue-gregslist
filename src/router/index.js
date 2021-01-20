@@ -9,6 +9,7 @@ import HomeDetailsPage from '../pages/HomeDetailsPage.vue'
 import HomesPage from '../pages/HomesPage.vue'
 
 const routes = [
+  // NOTE these are the routes for all of the routing that we will need for the application. To help travel between pages and to be used in the pages.
   {
     path: '/cars',
     name: 'Cars',
@@ -31,7 +32,7 @@ const routes = [
     component: null
   }
 ]
-
+// REVIEW I do not understand exactly what these do? creates different routers for diffferent times that we will use it?
 const router = createRouter({
   history: createWebHashHistory(),
   routes

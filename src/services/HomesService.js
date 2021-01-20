@@ -1,6 +1,7 @@
 import { AppState } from '../AppState'
 import { api } from './AxiosService'
 const key = 'houses/'
+// NOTE used a variable to use the url appendage anywhere without having to type it out all the time.
 
 class HomesService {
   async getHomes() {
@@ -11,8 +12,6 @@ class HomesService {
   }
 
   async getOne(id) {
-    // REVIEW since I changed the api default in the axios service I need to change what the individual id search is looking for
-    // to the url link for it. How do I do that exactly?
     const res = await api.get(key + id)
     AppState.activeHome = res.data
   }
@@ -22,6 +21,7 @@ class HomesService {
     AppState.homes.push(res.data)
     return res.data.id
   }
+  // NOTE will eventually add delet and put. How do they interact with everything? similarly like we have already done? we will just have to add buttons and things onto the page?
 }
 
 export const homesService = new HomesService()
