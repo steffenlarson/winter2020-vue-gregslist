@@ -4,6 +4,8 @@ import CarDetailsPage from '../pages/CarDetailsPage.vue'
 // @ts-ignore
 import CarsPage from '../pages/CarsPage.vue'
 // @ts-ignore
+import HomeDetailsPage from '../pages/HomeDetailsPage.vue'
+// @ts-ignore
 import HomesPage from '../pages/HomesPage.vue'
 
 const routes = [

@@ -116,6 +116,7 @@ export default {
       try {
         carsService.getCars()
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.error(error)
       }
     })
@@ -131,6 +132,7 @@ export default {
           // change route in javascript using router.push()
           router.push({ name: 'CarDetails', params: { id } })
         } catch (error) {
+          // eslint-disable-next-line no-console
           console.error(error)
         }
       }

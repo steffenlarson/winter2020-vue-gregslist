@@ -1,7 +1,7 @@
 <template>
-  <div class="car-details">
-    <h1>Welcome to car details</h1>
-    <img v-if="state.loaded" :src="car.imgUrl" alt="" />
+  <div class="home-details">
+    <h1>Welcome to home details</h1>
+    <img v-if="state.loaded" :src="home.imgUrl" alt="" />
     <h1 v-else>
       Loading...
     </h1>
@@ -12,7 +12,7 @@
 import { computed, onMounted, reactive } from 'vue'
 import { useRoute } from 'vue-router'
 import { AppState } from '../AppState'
-import { carsService } from '../services/CarsService'
+import { homesService } from '../services/HomesService'
 // IMPORTANT REVIEW
 export default {
   setup() {
@@ -25,8 +25,9 @@ export default {
     // })
     onMounted(async() => {
       try {
-        await carsService.getOne(route.params.id)
+        await homesService.getOne(route.params.id)
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.error(error)
       } finally {
         state.loaded = true
@@ -34,7 +35,7 @@ export default {
     })
     return {
       state,
-      car: computed(() => AppState.activeCar)
+      home: computed(() => AppState.activeHome)
     }
   }
 }

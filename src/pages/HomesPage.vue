@@ -7,40 +7,40 @@
     </div>
     <div class="row">
       <div class="col">
-        <form @submit.prevent="createCar">
+        <form @submit.prevent="createHome">
           <div class="form-group-inline">
-            <label for="make">Make</label>
-            <input
-              type="text"
-              name="make"
-              id="make"
-              v-model="state.newCar.make"
-              class="form-control"
-              placeholder="Make..."
-              aria-describedby="helpId"
-            />
-          </div>
-          <div class="form-group-inline">
-            <label for="model">model</label>
-            <input
-              type="text"
-              name="model"
-              id="model"
-              v-model="state.newCar.model"
-              class="form-control"
-              placeholder="model..."
-              aria-describedby="helpId"
-            />
-          </div>
-          <div class="form-group-inline">
-            <label for="year">year</label>
+            <label for="bedrooms">Bedrooms</label>
             <input
               type="number"
-              name="year"
-              id="year"
-              v-model="state.newCar.year"
+              name="bedrooms"
+              id="bedrooms"
+              v-model="state.newHome.bedrooms"
               class="form-control"
-              placeholder="year..."
+              placeholder="Bedrooms..."
+              aria-describedby="helpId"
+            />
+          </div>
+          <div class="form-group-inline">
+            <label for="bathrooms">Bathrooms</label>
+            <input
+              type="number"
+              name="bathrooms"
+              id="bathrooms"
+              v-model="state.newHome.bathrooms"
+              class="form-control"
+              placeholder="Bathrooms..."
+              aria-describedby="helpId"
+            />
+          </div>
+          <div class="form-group-inline">
+            <label for="levels">levels</label>
+            <input
+              type="number"
+              name="levels"
+              id="levels"
+              v-model="state.newHome.levels"
+              class="form-control"
+              placeholder="levels..."
               aria-describedby="helpId"
             />
           </div>
@@ -50,9 +50,21 @@
               type="number"
               name="price"
               id="price"
-              v-model="state.newCar.price"
+              v-model="state.newHome.price"
               class="form-control"
               placeholder="price..."
+              aria-describedby="helpId"
+            />
+          </div>
+          <div class="form-group-inline">
+            <label for="year">year</label>
+            <input
+              type="number"
+              name="year"
+              id="year"
+              v-model="state.newHome.year"
+              class="form-control"
+              placeholder="year..."
               aria-describedby="helpId"
             />
           </div>
@@ -62,7 +74,7 @@
               type="text"
               name="description"
               id="description"
-              v-model="state.newCar.description"
+              v-model="state.newHome.description"
               class="form-control"
               placeholder="description..."
               aria-describedby="helpId"
@@ -74,7 +86,7 @@
               type="text"
               name="imgUrl"
               id="imgUrl"
-              v-model="state.newCar.imgUrl"
+              v-model="state.newHome.imgUrl"
               class="form-control"
               placeholder="imgUrl..."
               aria-describedby="helpId"
@@ -110,8 +122,9 @@ export default {
     // NOTE on mounted gets called when the page is first mounted to the dom (similar to constructors)
     onMounted(() => {
       try {
-        homesService.getCars()
+        homesService.getHomes()
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.error(error)
       }
     })
@@ -127,6 +140,7 @@ export default {
           // change route in javascript using router.push()
           router.push({ name: 'HomeDetails', params: { id } })
         } catch (error) {
+          // eslint-disable-next-line no-console
           console.error(error)
         }
       }

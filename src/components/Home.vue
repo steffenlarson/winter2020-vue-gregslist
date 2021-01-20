@@ -1,11 +1,11 @@
 <template>
-  <div class="car col-4">
-    <router-link :to="{ name: 'CarDetails', params: { id: car.id } }">
+  <div class="home col-4">
+    <router-link :to="{ name: 'HomeDetails', params: { id: home.id } }">
       <div class="card">
-        <img class="card-img-top" :src="car.imgUrl" alt="" />
+        <img class="card-img-top" :src="home.imgUrl" alt="" />
         <div class="card-body">
           <h4 class="card-title">
-            {{ car.make }} | {{ car.model }}
+            Bedrooms: {{ home.bedrooms }} |  Bathrooms: {{ home.bathrooms }} | Floors: {{ home.levels }} | Price: {{ home.price }}
           </h4>
         </div>
       </div>
@@ -15,9 +15,9 @@
 
 <script>
 export default {
-  name: 'Car',
+  name: 'Home',
   props: {
-    car: {
+    home: {
       type: Object,
       required: true
     }
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .car {
+  .home {
     cursor: pointer;
   }
 </style>
