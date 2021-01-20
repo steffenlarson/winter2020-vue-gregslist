@@ -87,6 +87,10 @@
       </div>
     </div>
     <div class="row">
+      <!-- REVIEW what does line below do exactly? v-for is for each of the cars in the cars array in the appstate.
+      itterating over each instance of the array. The key is the car id, and it makes a singe instance of a car?
+      The car variable gets used in each of the three parts below, I just want to know exactly how it reads/
+      what it says... -->
       <Car v-for="car in cars" :key="car.id" :car="car" />
     </div>
   </div>

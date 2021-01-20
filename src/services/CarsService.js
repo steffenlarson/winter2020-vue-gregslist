@@ -4,7 +4,7 @@ import { api } from './AxiosService'
 class CarsService {
   async getCars() {
     // fetch data
-    const res = await api.get('')
+    const res = await api.get('cars')
     // add to AppState
     AppState.cars = res.data
   }
